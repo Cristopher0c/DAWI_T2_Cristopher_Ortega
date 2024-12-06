@@ -42,15 +42,15 @@ public class CrudFilmController {
 	public String putFilm(@ModelAttribute FilmTosaveDTO filmSelected,RedirectAttributes flash) {		
 		 if (filmSelected.filmId()!=null)	{
 			 if(_CrudFilmService.update(filmSelected)!=null)
-				 flash.addFlashAttribute("success", "Se guardo el film correctamente");
+				 flash.addFlashAttribute("success", "Se actualizo el film correctamente");
 			 else
-				 flash.addFlashAttribute("error", "No se guardo el film correctamente");
+				 flash.addFlashAttribute("error", "No se actualizo el film correctamente");
 		 }		
 		else
 			if(_CrudFilmService.create(filmSelected)!=null)
-				 flash.addFlashAttribute("success", "Se guardo el film correctamente");
+				 flash.addFlashAttribute("success", "Se creo el film correctamente");
 			 else
-				 flash.addFlashAttribute("error", "No se guardo el film correctamente");
+				 flash.addFlashAttribute("error", "No se creo el film correctamente");
 			
 			 return "redirect:/films";
 	}

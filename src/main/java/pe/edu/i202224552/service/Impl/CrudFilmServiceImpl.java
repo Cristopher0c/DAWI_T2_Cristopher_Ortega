@@ -38,7 +38,7 @@ public class CrudFilmServiceImpl implements CrudFilmService{
 	                    film.getRating()
 	                )
 	            )
-	            .collect(Collectors.toList()); // Convierte el Stream a una List
+	            .collect(Collectors.toList()); 
 	}
 	@Transactional(readOnly = true)
 	@Override
